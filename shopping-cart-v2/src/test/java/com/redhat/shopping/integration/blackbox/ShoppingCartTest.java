@@ -10,6 +10,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Ignore;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -74,8 +75,8 @@ public class ShoppingCartTest {
             .statusCode(400);
     }
 
-    @Test
     @Ignore
+    @Test
     public void removingNonAddedProductToTheCartReturns404() {
         // Test implementation
         given()
@@ -86,8 +87,8 @@ public class ShoppingCartTest {
             .statusCode(404);
     }
 
-    @Test
     @Ignore
+    @Test
     public void removingTheOnlyProductInCartReturns204() {
         // Setting the scenario to have the product with ID #1 already in the cart
         this.addProductToTheCartWithIdAndRandomQuantity(1);
@@ -101,8 +102,8 @@ public class ShoppingCartTest {
             .statusCode(204);
     }
 
-    @Test
     @Ignore
+    @Test
     public void removingProductFromCartContainingMultipleAndDifferentProductsReturns200() {
         // Setting the scenario to have the products with IDs 1 and 2 already in the cart
         this.addProductToTheCartWithIdAndRandomQuantity(1);
