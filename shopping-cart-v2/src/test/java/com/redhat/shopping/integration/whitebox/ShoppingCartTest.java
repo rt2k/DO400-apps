@@ -10,7 +10,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -56,7 +56,7 @@ public class ShoppingCartTest {
         );
     }
 
-    @Ignore
+    @Disabled
     @Test
     void addingNonExistingProductInCartTheTotalItemsMatchTheInitialQuantity()
             throws ProductNotFoundInCatalogException {
@@ -69,7 +69,7 @@ public class ShoppingCartTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     void addingProductThatIsInTheCartTheTotalItemsMatchTheSumOfQuantities()
             throws ProductNotFoundInCatalogException {
 
