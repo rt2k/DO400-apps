@@ -43,6 +43,26 @@ public class ShoppingCartTest {
         delete("/cart");
     }
 
+    @BeforeAll
+
+     public static void setup() {
+
+	      CatalogStorage mockStorage = Mockito.mock(InMemoryCatalogStorage.class);
+
+	       Mockito.when(mockStorage.containsKey(1)).thenReturn(true);
+
+	        Mockito.when(mockStorage.containsKey(2)).thenReturn(true);
+
+		 Mockito.when(mockStorage.containsKey(9999)).thenReturn(false);
+
+		  Mockito.when(mockStorage.get(1)).thenReturn(new Product(1, 100));
+
+		   Mockito.when(mockStorage.get(2)).thenReturn(new Product(2, 200));
+
+		    QuarkusMock.installMockForType(mockStorage, CatalogStorage.class);
+
+		     }
+
     @Test
     public void removingNonExistingProductInCatalogReturns400() {
         // Test implementation
