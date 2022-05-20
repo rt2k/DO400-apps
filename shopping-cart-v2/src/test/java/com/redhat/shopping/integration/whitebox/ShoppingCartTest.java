@@ -56,6 +56,7 @@ public class ShoppingCartTest {
     }
 
     @Test
+    @Ignore
     void addingNonExistingProductInCartTheTotalItemsMatchTheInitialQuantity()
             throws ProductNotFoundInCatalogException {
 
@@ -67,6 +68,7 @@ public class ShoppingCartTest {
     }
 
     @Test
+    @Ignore
     void addingProductThatIsInTheCartTheTotalItemsMatchTheSumOfQuantities()
             throws ProductNotFoundInCatalogException {
 
