@@ -7,7 +7,7 @@ pipeline {
  stages {
 
  stage('Test') {
-
+ options { timeout(time: 50, unit: 'SECONDS') }
  steps {
 
  dir('shopping-cart-v2') {
